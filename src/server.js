@@ -30,6 +30,7 @@ export const setupServer = () => {
 
   // Middleware error
   app.use(notFoundHandler);
+
   app.use(errorHandler);
 
   // Start server
