@@ -12,22 +12,28 @@ import {
   updateContactsSchema,
 } from '../validation/contacts.js';
 import { isValidId } from '../middlewares/isValidId.js';
+import { authenticate } from '../middlewares/authenticate.js';
 
-const router = Router();
-
+const contactsRouter = Router();
+// Middlewares authenticate
+contactsRouter.use(authenticate);
 // GET
-router.get('/', getAllContactsController);
-router.get('/:contactId', isValidId, getContactByIdController);
+contactsRouter.get('/', getAllContactsController);
+contactsRouter.get('/:contactId', isValidId, getContactByIdController);
 // POST
-router.post('/', validateBody(createContactsSchema), createContactController);
+contactsRouter.post(
+  '/',
+  validateBody(createContactsSchema),
+  createContactController,
+);
 // PATCH
-router.patch(
+contactsRouter.patch(
   '/:contactId',
   isValidId,
   validateBody(updateContactsSchema),
   patchContactController,
 );
 // DELETE
-router.delete('/:contactId', isValidId, deleteContactController);
+contactsRouter.delete('/:contactId', isValidId, deleteContactController);
 
-export default router;
+export default contactsRouter;
