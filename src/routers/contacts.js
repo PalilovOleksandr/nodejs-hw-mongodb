@@ -13,6 +13,7 @@ import {
 } from '../validation/contacts.js';
 import { isValidId } from '../middlewares/isValidId.js';
 import { authenticate } from '../middlewares/authenticate.js';
+import { upload } from '../middlewares/multer.js';
 
 const contactsRouter = Router();
 // Middlewares authenticate
@@ -24,12 +25,14 @@ contactsRouter.get('/:contactId', isValidId, getContactByIdController);
 contactsRouter.post(
   '/',
   validateBody(createContactsSchema),
+  upload.single('photo'),
   createContactController,
 );
 // PATCH
 contactsRouter.patch(
   '/:contactId',
   isValidId,
+  upload.single('photo'),
   validateBody(updateContactsSchema),
   patchContactController,
 );
