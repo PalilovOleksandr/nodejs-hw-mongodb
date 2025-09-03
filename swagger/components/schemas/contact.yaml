@@ -1,0 +1,41 @@
+type: object
+required:
+  - _id
+  - name
+  - phoneNumber
+  - email
+  - isFavourite
+  - contactType
+properties:
+  _id:
+    description: 'Unique Contact id'
+    type: string
+    example: 65ca67e7ae7f10c88b598384
+  name:
+    description: 'Contact name'
+    type: string
+    example: Palilov Oleksandr
+  phoneNumber:
+    description: 'Contact phoneNumber'
+    type: string
+    example: +380000000004
+  email:
+    description: 'Unique email contact'
+    type: string
+    example: 'opalilovit@gmail.com'
+  isFavourite:
+    description: 'Is it a favorite contact'
+    type: boolean
+    example: false
+  contactType:
+    description: 'Type of contact'
+    type: string
+    enum: ['work', 'home', 'personal']
+  userId:
+    description: 'Сontact owner id'
+    type: string
+    example: 68a48aa211c384b710f375c1
+  photo:
+    description: Link to contact`s photo
+    type: string
+    example: https://res.cloudinary.com/dlu3qdnnl/image/upload/v1756301508/frn7ichafyoiewh1xkzy.jpg
