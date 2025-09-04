@@ -24,7 +24,7 @@ requestBody:
             type: string
             example: '+380000000004'
           email:
-            description: 'Unique email contact'
+            description: 'Email contact'
             type: string
             example: 'opalilovit@gmail.com'
           isFavourite:
@@ -61,8 +61,6 @@ responses:
               type: object
               $ref: ../../components/schemas/contact.yaml
   '401':
-    $ref: '../../components/responses/401.yaml'
-  '404':
-    $ref: '../../components/responses/404.yaml'
+    $ref: '../../components/responses/401Contact.yaml'
   '500':
     $ref: '../../components/responses/500.yaml'

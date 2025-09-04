@@ -22,7 +22,6 @@ parameters:
       type: string
       enum: ['asc', 'desc']
       example: 'asc'
-      description: 'Defautl value - asc'
   - in: query
     name: sortBy
     schema:
@@ -32,7 +31,6 @@ parameters:
   - in: query
     name: isFavourite
     schema:
-      description: 'Is it a favorite contact'
       type: boolean
       example: false
   - in: query
@@ -93,7 +91,7 @@ responses:
                   type: boolean
                   example: true
   '401':
-    $ref: '../../components/responses/401.yaml'
+    $ref: '../../components/responses/401Contact.yaml'
   '404':
     $ref: '../../components/responses/404.yaml'
   '500':
