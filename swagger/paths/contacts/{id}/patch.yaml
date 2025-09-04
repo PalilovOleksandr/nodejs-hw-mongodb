@@ -17,6 +17,31 @@ requestBody:
     multipart/form-data:
       schema:
         type: object
+        properties:
+          name:
+            description: 'Contact name'
+            type: string
+            example: Palilov Oleksandr
+          phoneNumber:
+            description: 'Phone number contact'
+            type: string
+            example: '+380000000004'
+          email:
+            description: 'Unique email contact'
+            type: string
+            example: 'opalilovit@gmail.com'
+          isFavourite:
+            description: 'Is it a favorite contact'
+            type: boolean
+            example: false
+          contactType:
+            description: 'Type of contact'
+            type: string
+            enum: ['work', 'home', 'personal']
+          photo:
+            description: Link to contact`s photo
+            type: string
+            example: https://res.cloudinary.com/dlu3qdnnl/image/upload/v1756301508/frn7ichafyoiewh1xkzy.jpg
 responses:
   '200':
     description: 'Patch contact by id'
@@ -38,7 +63,9 @@ responses:
             data:
               type: object
               $ref: ../../../components/schemas/contact.yaml
-  '404':
-    $ref: ../../../components/responses/404.yaml
   '401':
     $ref: '../../../components/responses/401.yaml'
+  '404':
+    $ref: '../../../components/responses/404.yaml'
+  '500':
+    $ref: '../../../components/responses/500.yaml'

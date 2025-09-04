@@ -16,9 +16,9 @@ properties:
     type: string
     example: Palilov Oleksandr
   phoneNumber:
-    description: 'Contact phoneNumber'
+    description: 'Phone number contact'
     type: string
-    example: +380000000004
+    example: '+380000000004'
   email:
     description: 'Unique email contact'
     type: string
