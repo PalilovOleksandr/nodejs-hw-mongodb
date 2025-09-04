@@ -32,6 +32,7 @@ parameters:
   - in: query
     name: isFavourite
     schema:
+      description: 'Is it a favorite contact'
       type: boolean
       example: false
   - in: query
